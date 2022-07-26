@@ -10,6 +10,24 @@
   </head>
   <body>
     <header><h1>Organização de churrasco</h1></header>
-    <article></article>
+    <article>
+      <section>
+        <form id="addPessoa">
+          <label>Nome<input type="text" required /></label>
+          <input type="submit" value="Adicionar" />
+        </form>
+      </section>
+      <section>
+        <form id="addProduto">
+          <label>Produto<input type="text" required /></label>
+          <label>
+            Valor Un.
+            <input type="number" step="0.01" min="0" required />
+          </label>
+          <button>Custo fixo</button>
+          <button>Per capita</button>
+        </form>
+      </section>
+    </article>
   </body>
 </html>
