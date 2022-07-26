@@ -19,14 +19,39 @@
       </section>
       <section>
         <form id="addProduto">
-          <label>Produto<input type="text" required /></label>
+          <label
+            >Produto<input id="produto" name="produto" type="text" required
+          /></label>
           <label>
             Valor Un.
-            <input type="number" step="0.01" min="0" required />
+            <input
+              id="valorUnitario"
+              name="valorUnitario"
+              type="number"
+              step="0.01"
+              min="0"
+              required
+            />
           </label>
-          <button>Custo fixo</button>
-          <button>Per capita</button>
+          <button id="btnCustoFixo" type="button">Custo fixo</button>
+          <button id="btnPerCapita" type="button">Per capita</button>
         </form>
+      </section>
+      <section>
+        <ul id="participantes"></ul>
+      </section>
+      <section>
+        <section>
+          <h1>Custos Fixos</h1>
+          <table id="custosFixos"></table>
+        </section>
+        <section>
+          <h1>Custos Per Capita</h1>
+          <table id="custosPerCapita"></table>
+        </section>
+      </section>
+      <section>
+        <p>Valor para cada um:<span id="valorCadaUm"></span></p>
       </section>
     </article>
   </body>
