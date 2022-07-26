@@ -11,31 +11,33 @@
   <body>
     <header><h1>Organização de churrasco</h1></header>
     <article>
-      <section>
-        <form id="addPessoa">
-          <label>Nome<input type="text" required /></label>
-          <input type="submit" value="Adicionar" />
-        </form>
-      </section>
-      <section>
-        <form id="addProduto">
-          <label
-            >Produto<input id="produto" name="produto" type="text" required
-          /></label>
-          <label>
-            Valor Un.
-            <input
-              id="valorUnitario"
-              name="valorUnitario"
-              type="number"
-              step="0.01"
-              min="0"
-              required
-            />
-          </label>
-          <button id="btnCustoFixo" type="button">Custo fixo</button>
-          <button id="btnPerCapita" type="button">Per capita</button>
-        </form>
+      <section class="formularios">
+        <section>
+          <form id="addPessoa">
+            <label>Nome<input type="text" required /></label>
+            <input type="submit" value="Adicionar" />
+          </form>
+        </section>
+        <section>
+          <form id="addProduto">
+            <label>
+              Produto<input id="produto" name="produto" type="text" required />
+            </label>
+            <label>
+              Valor Un.
+              <input
+                id="valorUnitario"
+                name="valorUnitario"
+                type="number"
+                step="0.01"
+                min="0"
+                required
+              />
+            </label>
+            <button id="btnCustoFixo" type="button">Custo fixo</button>
+            <button id="btnPerCapita" type="button">Per capita</button>
+          </form>
+        </section>
       </section>
       <section>
         <ul id="participantes"></ul>
