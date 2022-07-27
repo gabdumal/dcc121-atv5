@@ -15,20 +15,24 @@ article {
 
 .form {
   display: flex;
-  gap: 0.5em;
-}
-
-.form-vertical {
   flex-direction: column;
+  gap: 0.5em;
 }
 
 .form label {
   display: flex;
   justify-content: space-between;
   gap: 0.5em;
+  white-space: nowrap;
 }
 
 .secao-produtos {
   display: flex;
   flex-direction: column;
+}
+
+.tabelas {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
