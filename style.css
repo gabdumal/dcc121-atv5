@@ -7,7 +7,7 @@ article {
   flex-direction: column;
 }
 
-.formularios {
+.cadastro {
   display: flex;
   flex-direction: row;
 }
@@ -16,11 +16,12 @@ article {
   display: flex;
 }
 
-.form-vertical {
-  flex-direction: column;
-}
-
 .form label {
   display: flex;
   justify-content: space-between;
+}
+
+.secao-produtos {
+  display: flex;
+  flex-direction: column;
 }
