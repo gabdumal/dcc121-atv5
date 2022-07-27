@@ -14,8 +14,10 @@ function submitListener(event) {
   event.preventDefault();
 
   // Estado
+  const idPessoa = estado.pessoas.length;
   const nome = formPessoa.nome.value;
-  estado.pessoas.push(nome);
+  const pessoaObj = { nome: nome, idPessoa: idPessoa };
+  estado.pessoas.push(pessoaObj);
 
   // DOM
   const listaPessoas = document.querySelector("#pessoas");
@@ -26,6 +28,7 @@ function submitListener(event) {
   nomePessoa.textContent = nome;
   linha.appendChild(btnRemover);
   linha.appendChild(nomePessoa);
+  linha.setAttribute("idPessoa", idPessoa);
   listaPessoas.appendChild(linha);
 
   // Limpa formulário
@@ -33,3 +36,5 @@ function submitListener(event) {
 
   console.log(estado);
 }
+
+function removePessoa(idPessoa) {}
