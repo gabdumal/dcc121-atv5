@@ -5,11 +5,13 @@ body {
 article {
   display: flex;
   flex-direction: column;
+  align-content: space-around;
 }
 
 .cadastro {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   gap: 2.5%;
 }
 
@@ -47,4 +49,9 @@ article {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+}
+
+.secao-valor {
+  display: flex;
+  justify-content: flex-end;
 }
