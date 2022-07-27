@@ -55,3 +55,25 @@ article {
   display: flex;
   justify-content: flex-end;
 }
+
+.lista-pessoas > h1 {
+  margin-bottom: 0;
+}
+
+#pessoas {
+  list-style-type: none;
+  padding: 0;
+}
+
+#pessoas > li {
+  display: flex;
+  gap: 2.5%;
+  align-items: flex-end;
+}
+
+#pessoas > li > button {
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+  padding: 0;
+}

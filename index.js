@@ -18,7 +18,7 @@ function submitListener(event) {
   estado.pessoas.push(nome);
 
   // DOM
-  const listaPessoas = document.querySelector("#participantes");
+  const listaPessoas = document.querySelector("#pessoas");
   const linha = document.createElement("li");
   const btnRemover = document.createElement("button");
   btnRemover.textContent = "❌";
