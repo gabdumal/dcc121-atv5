@@ -13,7 +13,19 @@ article {
   gap: 2.5%;
 }
 
-.form {
+.form,
+.form > .campos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form-btn-column {
+  display: flex;
+  flex-direction: row;
+}
+
+.form > .botoes {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
