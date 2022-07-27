@@ -10,15 +10,22 @@ article {
 .cadastro {
   display: flex;
   flex-direction: row;
+  gap: 2.5%;
 }
 
 .form {
   display: flex;
+  gap: 0.5em;
+}
+
+.form-vertical {
+  flex-direction: column;
 }
 
 .form label {
   display: flex;
   justify-content: space-between;
+  gap: 0.5em;
 }
 
 .secao-produtos {
