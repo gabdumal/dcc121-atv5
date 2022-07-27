@@ -1,3 +1,8 @@
+let estado = {
+  pessoas: [],
+  produtos: [],
+};
+
 // Captura elementos do DOM
 const formPessoa = document.querySelector("#addPessoa");
 const addProduto = document.querySelector("#addProduto");
@@ -7,5 +12,9 @@ formPessoa.addEventListener("submit", submitListener);
 
 function submitListener(event) {
   event.preventDefault();
-  console.log(formPessoa.nome);
+
+  const nome = formPessoa.nome.value;
+  estado.pessoas.push(nome);
+
+  console.log(estado);
 }
