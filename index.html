@@ -9,17 +9,17 @@
     <title>Organização de churrasco</title>
   </head>
   <body>
-    <header><h1>Organização de churrasco</h1></header>
+    <header class="cabecalho"><h1>Organização de churrasco</h1></header>
     <article>
       <section class="formularios">
         <section>
-          <form id="addPessoa">
+          <form id="addPessoa" class="form">
             <label>Nome<input type="text" required /></label>
             <input type="submit" value="Adicionar" />
           </form>
         </section>
         <section>
-          <form id="addProduto">
+          <form id="addProduto" class="form form-vertical">
             <label>
               Produto<input id="produto" name="produto" type="text" required />
             </label>
@@ -56,5 +56,8 @@
         <p>Valor para cada um:<span id="valorCadaUm"></span></p>
       </section>
     </article>
+    <footer class="creditos">
+      <p>Feito com ❤ por @devgabmal</p>
+    </footer>
   </body>
 </html>
