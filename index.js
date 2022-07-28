@@ -28,7 +28,7 @@ function submitListener(event) {
   nomePessoa.textContent = nome;
   linha.appendChild(btnRemover);
   linha.appendChild(nomePessoa);
-  linha.setAttribute("idPessoa", idPessoa);
+  linha.setAttribute("data-id-pessoa", idPessoa);
   listaPessoas.appendChild(linha);
 
   // Limpa formulário
