@@ -94,5 +94,19 @@ function adicionaProduto(tipo) {
   estado.produtos.push(produtoObj);
   estado.idProxProduto++;
 
-  console.log(estado);
+  // DOM
+  let table = 0;
+  if (tipo === "cf") {
+    table = document.querySelector("#custosFixos");
+  } else {
+    table = document.querySelector("#custosPerCapita");
+  }
+  const tr = document.createElement("tr");
+  const tdDescricao = document.createElement("td");
+  const tdValor = document.createElement("td");
+  tdDescricao.textContent = descricao;
+  tdValor.textContent = valor;
+  tr.appendChild(tdDescricao);
+  tr.appendChild(tdValor);
+  table.appendChild(tr);
 }
