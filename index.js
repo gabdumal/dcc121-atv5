@@ -1,6 +1,7 @@
 let estado = {
   pessoas: [],
   produtos: [],
+  idProxPessoa: 0,
 };
 
 // Captura elementos do DOM
@@ -14,10 +15,11 @@ function submitListener(event) {
   event.preventDefault();
 
   // Estado
-  const idPessoa = estado.pessoas.length;
+  const idPessoa = estado.idProxPessoa;
   const nome = formPessoa.nome.value;
   const pessoaObj = { nome: nome, idPessoa: idPessoa };
   estado.pessoas.push(pessoaObj);
+  estado.idProxPessoa++;
 
   // DOM
   const listaPessoas = document.querySelector("#pessoas");
@@ -41,12 +43,20 @@ function removePessoa(event) {
   const btnRemover = event.target;
   const linha = btnRemover.parentElement;
   const nomePessoa = linha.lastElementChild;
-  const idPessoa = linha.getAttribute("data-id-pessoa");
+  const idPessoa = Number(linha.getAttribute("data-id-pessoa"));
 
   // Remove elementos
   btnRemover.remove();
   nomePessoa.remove();
   linha.remove();
 
-  console.log(idPessoa);
+  // Remove registro do estado
+  const pessoas = estado.pessoas;
+  const indice = pessoas.findIndex(buscaPessoa, idPessoa);
+  pessoas.splice(indice, 1);
+  console.log(estado);
+}
+
+function buscaPessoa(pessoa) {
+  return pessoa.idPessoa == this;
 }
