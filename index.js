@@ -14,6 +14,13 @@ formPessoa.addEventListener("submit", submitListener);
 function submitListener(event) {
   event.preventDefault();
 
+  adicionaPessoa();
+
+  // Limpa formulário
+  formPessoa.reset();
+}
+
+function adicionaPessoa() {
   // Estado
   const idPessoa = estado.idProxPessoa;
   const nome = formPessoa.nome.value;
@@ -33,9 +40,6 @@ function submitListener(event) {
   linha.appendChild(nomePessoa);
   linha.setAttribute("data-id-pessoa", idPessoa);
   listaPessoas.appendChild(linha);
-
-  // Limpa formulário
-  formPessoa.reset();
 }
 
 function removePessoa(event) {
@@ -54,7 +58,6 @@ function removePessoa(event) {
   const pessoas = estado.pessoas;
   const indice = pessoas.findIndex(buscaPessoa, idPessoa);
   pessoas.splice(indice, 1);
-  console.log(estado);
 }
 
 function buscaPessoa(pessoa) {
