@@ -71,7 +71,7 @@ article {
   align-items: flex-end;
 }
 
-#pessoas > li > button {
+.btn-remover {
   background-color: transparent;
   border: unset;
   cursor: pointer;

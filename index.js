@@ -49,6 +49,7 @@ function adicionaPessoa() {
   const linha = document.createElement("li");
   const btnRemover = document.createElement("button");
   btnRemover.textContent = "❌";
+  btnRemover.classList.add("btn-remover");
   btnRemover.addEventListener("click", removePessoa);
   const nomePessoa = document.createElement("span");
   nomePessoa.textContent = nome;
@@ -104,9 +105,18 @@ function adicionaProduto(tipo) {
   const tr = document.createElement("tr");
   const tdDescricao = document.createElement("td");
   const tdValor = document.createElement("td");
+  const tdRemover = document.createElement("td");
   tdDescricao.textContent = descricao;
   tdValor.textContent = valor;
+  const btnRemover = document.createElement("button");
+  btnRemover.textContent = "❌";
+  btnRemover.classList.add("btn-remover");
+  btnRemover.addEventListener("click", removeProduto);
+  tdRemover.appendChild(btnRemover);
   tr.appendChild(tdDescricao);
   tr.appendChild(tdValor);
+  tr.appendChild(tdRemover);
   table.appendChild(tr);
 }
+
+function removeProduto() {}
