@@ -2,22 +2,38 @@ let estado = {
   pessoas: [],
   produtos: [],
   idProxPessoa: 0,
+  idProxProduto: 0,
 };
 
 // Captura elementos do DOM
 const formPessoa = document.querySelector("#addPessoa");
 const addProduto = document.querySelector("#addProduto");
+const btnCustoFixo = document.querySelector("#btnCustoFixo");
+const btnPerCapita = document.querySelector("#btnPerCapita");
 
 // Adiciona ouvintes
 formPessoa.addEventListener("submit", submitListener);
+btnCustoFixo.addEventListener("click", btnCustoFixoClickListener);
+btnPerCapita.addEventListener("click", btnPerCapitaClickListener);
 
 function submitListener(event) {
   event.preventDefault();
-
   adicionaPessoa();
-
   // Limpa formulário
   formPessoa.reset();
+}
+
+function btnCustoFixoClickListener() {
+  if (addProduto.descricao.value != "" && addProduto.valor.value != "") {
+    adicionaProduto("cf");
+    addProduto.reset();
+  }
+}
+function btnPerCapitaClickListener() {
+  if (addProduto.descricao.value != "" && addProduto.valor.value != "") {
+    adicionaProduto("pc");
+    addProduto.reset();
+  }
 }
 
 function adicionaPessoa() {
@@ -62,4 +78,21 @@ function removePessoa(event) {
 
 function buscaPessoa(pessoa) {
   return pessoa.idPessoa == this;
+}
+
+function adicionaProduto(tipo) {
+  // Estado
+  const idProduto = estado.idProxProduto;
+  const descricao = addProduto.descricao.value;
+  const valor = addProduto.valor.value;
+  const produtoObj = {
+    descricao: descricao,
+    valor: valor,
+    tipo: tipo,
+    idProduto: idProduto,
+  };
+  estado.produtos.push(produtoObj);
+  estado.idProxProduto++;
+
+  console.log(estado);
 }
