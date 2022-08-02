@@ -24,6 +24,7 @@ function submitListener(event) {
   const linha = document.createElement("li");
   const btnRemover = document.createElement("button");
   btnRemover.textContent = "❌";
+  btnRemover.addEventListener("click", removePessoa);
   const nomePessoa = document.createElement("span");
   nomePessoa.textContent = nome;
   linha.appendChild(btnRemover);
@@ -33,8 +34,19 @@ function submitListener(event) {
 
   // Limpa formulário
   formPessoa.reset();
-
-  console.log(estado);
 }
 
-function removePessoa(idPessoa) {}
+function removePessoa(event) {
+  // Captura elementos e dados
+  const btnRemover = event.target;
+  const linha = btnRemover.parentElement;
+  const nomePessoa = linha.lastElementChild;
+  const idPessoa = linha.getAttribute("data-id-pessoa");
+
+  // Remove elementos
+  btnRemover.remove();
+  nomePessoa.remove();
+  linha.remove();
+
+  console.log(idPessoa);
+}
