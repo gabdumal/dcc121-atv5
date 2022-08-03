@@ -5,6 +5,12 @@ let estado = {
   idProxProduto: 0,
 };
 
+// Formatador de valor para moeda
+const formatador = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+});
+
 // Captura elementos do DOM
 const formPessoa = document.querySelector("#addPessoa");
 const addProduto = document.querySelector("#addProduto");
@@ -90,7 +96,7 @@ function adicionaProduto(tipo) {
   // Estado
   const idProduto = estado.idProxProduto;
   const descricao = addProduto.descricao.value;
-  const valor = Math.round(Number(addProduto.valor.value) * 100) / 100;
+  const valor = Number(addProduto.valor.value);
   const produtoObj = {
     descricao: descricao,
     valor: valor,
@@ -112,7 +118,7 @@ function adicionaProduto(tipo) {
   const tdValor = document.createElement("td");
   const tdRemover = document.createElement("td");
   tdDescricao.textContent = descricao;
-  tdValor.textContent = valor;
+  tdValor.textContent = formatador.format(valor);
   const btnRemover = document.createElement("button");
   btnRemover.textContent = "❌";
   btnRemover.classList.add("btn-remover");
@@ -156,7 +162,7 @@ function buscaProduto(produto) {
 }
 
 function atualizaValorCadaUm() {
-  valorCadaUm.textContent = calculaValor().toFixed(2);
+  valorCadaUm.textContent = formatador.format(calculaValor());
 }
 
 function calculaValor() {
