@@ -116,7 +116,8 @@ function adicionaProduto(tipo) {
   tr.appendChild(tdDescricao);
   tr.appendChild(tdValor);
   tr.appendChild(tdRemover);
+  tr.setAttribute("data-id-produto", idProduto);
   table.appendChild(tr);
 }
 
-function removeProduto() {}
+function removeProduto(event) {}
