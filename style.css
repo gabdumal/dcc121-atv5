@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin-inline: 2.5%;
 }
 
 article {
@@ -53,12 +54,17 @@ article {
   flex-direction: column;
   align-items: center;
   gap: 1em;
+  margin-top: 2em;
 }
 
 .tabelas {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+}
+
+.tabelas table {
+  border-collapse: collapse;
 }
 
 .tabelas caption {
@@ -69,6 +75,10 @@ article {
 .tabelas td:nth-child(1),
 .tabelas td:nth-child(2) {
   min-width: 3em;
+  border: 1px solid;
+  padding-block: 0.2em;
+  padding-inline: 0.5em;
+  text-align: center;
 }
 
 .secao-valor {
@@ -82,7 +92,7 @@ article {
   font-size: xx-large;
 }
 
-.lista-pessoas > h1 {
+h1 {
   margin: 0;
 }
 
@@ -103,4 +113,8 @@ article {
   border: unset;
   cursor: pointer;
   padding: 0;
+}
+
+footer {
+  margin-inline: 2.5%;
 }
