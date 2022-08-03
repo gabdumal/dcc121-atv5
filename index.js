@@ -120,4 +120,28 @@ function adicionaProduto(tipo) {
   table.appendChild(tr);
 }
 
-function removeProduto(event) {}
+function removeProduto(event) {
+  // Captura elementos e dados
+  const btnRemover = event.target;
+  const tdRemover = btnRemover.parentElement;
+  const tr = tdRemover.parentElement;
+  const tdDescricao = tr.firstElementChild;
+  const tdValor = tr.children[1];
+  const idProduto = Number(tr.getAttribute("data-id-produto"));
+
+  // Remove elementos
+  btnRemover.remove();
+  tdRemover.remove();
+  tdDescricao.remove();
+  tdValor.remove();
+  tr.remove();
+
+  // Remove registro do estado
+  const produtos = estado.produtos;
+  const indice = produtos.findIndex(buscaProduto, idProduto);
+  produtos.splice(indice, 1);
+}
+
+function buscaProduto(produto) {
+  return produto.idProduto == this;
+}
