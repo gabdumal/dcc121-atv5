@@ -90,7 +90,7 @@ function adicionaProduto(tipo) {
   // Estado
   const idProduto = estado.idProxProduto;
   const descricao = addProduto.descricao.value;
-  const valor = addProduto.valor.value;
+  const valor = Number(addProduto.valor.value);
   const produtoObj = {
     descricao: descricao,
     valor: valor,
