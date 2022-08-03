@@ -90,7 +90,7 @@ function adicionaProduto(tipo) {
   // Estado
   const idProduto = estado.idProxProduto;
   const descricao = addProduto.descricao.value;
-  const valor = Number(addProduto.valor.value);
+  const valor = Math.round(Number(addProduto.valor.value) * 100) / 100;
   const produtoObj = {
     descricao: descricao,
     valor: valor,
@@ -156,7 +156,7 @@ function buscaProduto(produto) {
 }
 
 function atualizaValorCadaUm() {
-  valorCadaUm.textContent = calculaValor();
+  valorCadaUm.textContent = calculaValor().toFixed(2);
 }
 
 function calculaValor() {
