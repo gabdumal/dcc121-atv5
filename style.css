@@ -10,15 +10,22 @@ article {
 
 .cadastro {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   gap: 2.5%;
+}
+
+@media (min-width: 768px) {
+  .cadastro {
+    flex-direction: row;
+  }
 }
 
 .form,
 .form > .campos {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 0.5em;
 }
 
@@ -40,9 +47,12 @@ article {
   white-space: nowrap;
 }
 
+.secao-pessoas,
 .secao-produtos {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
 
 .tabelas {
@@ -51,18 +61,35 @@ article {
   gap: 0.5em;
 }
 
+.tabelas caption {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.tabelas td:nth-child(1),
+.tabelas td:nth-child(2) {
+  min-width: 3em;
+}
+
 .secao-valor {
   display: flex;
   justify-content: flex-end;
+  margin-inline: 2.5%;
+}
+
+#valorCadaUm {
+  margin-inline-start: 0.5em;
+  font-size: xx-large;
 }
 
 .lista-pessoas > h1 {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #pessoas {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 #pessoas > li {
