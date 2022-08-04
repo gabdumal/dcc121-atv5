@@ -128,7 +128,7 @@ function adicionaProduto(tipo) {
   tr.appendChild(tdValor);
   tr.appendChild(tdRemover);
   tr.setAttribute("data-id-produto", idProduto);
-  table.appendChild(tr);
+  table.lastElementChild.appendChild(tr);
 
   atualizaValorCadaUm();
 }
